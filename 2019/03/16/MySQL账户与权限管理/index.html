@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="GoldHu&#39;s Notes">
 <meta property="og:description" content="一、账户和权限管理 权限认证的过程 从mysql.user表中验证host（连接主机）,user（连接用户名）和password（连接密码）； 验证通过后，按照以下顺序获取权限：user表-&amp;gt;db表-&amp;gt;tables_priv表-&amp;gt;columns_priv表。     注意事项： user表中的权限代表对所有数据库都有权限而db表中的权限代表对部分数据库的权限。     创建账户1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T16:12:22.482Z">
+<meta property="og:updated_time" content="2019-03-16T17:24:43.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL账户与权限管理">
 <meta name="twitter:description" content="一、账户和权限管理 权限认证的过程 从mysql.user表中验证host（连接主机）,user（连接用户名）和password（连接密码）； 验证通过后，按照以下顺序获取权限：user表-&amp;gt;db表-&amp;gt;tables_priv表-&amp;gt;columns_priv表。     注意事项： user表中的权限代表对所有数据库都有权限而db表中的权限代表对部分数据库的权限。     创建账户1">
@@ -385,7 +385,7 @@
 <li>注意事项<ul>
 <li>管理权限属于全局权限，不能指定单个数据库；</li>
 <li>host值可以为主机名或IP地址，或为localhost表示只允许本机登陆；</li>
-<li>支持通配符%和<em>，%表示任意主机，</em>表示匹配一个字符；</li>
+<li>支持通配符%和_，%表示任意主机，_表示匹配一个字符；</li>
 <li>‘‘@localhost表示任意账户都可以从localhost登陆；</li>
 <li>host精确匹配的原则。</li>
 </ul>
