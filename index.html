@@ -379,16 +379,7 @@
       
         
           
-          一、账户和权限管理
-权限认证的过程
-从mysql.user表中验证host（连接主机）,user（连接用户名）和password（连接密码）；
-验证通过后，按照以下顺序获取权限：user表-&gt;db表-&gt;tables_priv表-&gt;columns_priv表。
-
-
-
-
-注意事项：
-u
+          账户和权限管理权限认证的过程step1. 从mysql.user表中验证host(连接主机), user(连接用户名)和password(连接密码)step2. 验证通过后，按照以下顺序获取权限：user表 -&gt; db表 -&gt; tables_priv表 -&gt; columns_pri
           ...
           <!--noindex-->
           <div class="post-button text-center">
