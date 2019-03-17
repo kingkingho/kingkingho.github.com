@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentOS下磁盘分区]]></title>
+    <url>%2F2019%2F03%2F17%2FDisk-parted-on-CentOS%2F</url>
+    <content type="text"><![CDATA[分步操作1234567891011121314151617181920212223# 找到未分区和格式化的硬盘,不包含分区的，如 /dev/sdj shell&gt; fdisk -l# 使用parted分区shell&gt; parted /dev/sdj# 打印当前分区设备的磁盘容量大小 (parted) print# 设置磁盘分区为gpt模式 (parted) mklabel gpt # 将所有容量创建分区(parted) mkpart primary 0 -1# Warning 提示输入i(parted) WARNING: xxxx Ignore/Cancel?i# 快速格式化分区mkfs.ext4 -T largefile /dev/sdj1# 挂载shell&gt; mount -t ext4 /dev/sdj1 /disk9 一行命令操作1234567891011121314# CentOS 5shell&gt; parted -s /dev/sdj mklabel gpt mkpart 1 ext3 0 4T# CentOS 6shell&gt; parted -s /dev/sdj mklabel gpt mkpart 1 ext4 0 4T# 挂载 shell&gt; mount -t ext4 /dev/sdj1 /disk9# 查看硬盘的UUID号码shell&gt; blkid /dev/sdj1 # 写入fstab开机自动挂载# /dev/sdj1 /disk9 ext4 defaults 0 1 shell&gt; vim /etc/fstab]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL账户与权限管理]]></title>
     <url>%2F2019%2F03%2F16%2FMySQL-Account-Privileges-Management%2F</url>
     <content type="text"><![CDATA[权限认证的过程step1. 从mysql.user表中验证host(连接主机), user(连接用户名)和password(连接密码)step2. 验证通过后，按照以下顺序获取权限：user表 -&gt; db表 -&gt; tables_priv表 -&gt; columns_priv表. 注意事项：user表中的权限代表对所有数据库都有权限而db表中的权限代表对部分数据库的权限。 创建账户12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#创建u1@localhost账户，密码设置为123,默认只有USAGE权限，若要其他权限需用GRANT赋权mysql&gt; CREATE USER 'u1'@'localhost' IDENTIFIED BY '123';#赋予用户u1@localhost所有库的权限.mysql&gt;GRANT ALL privileges ON *.* to 'u1'@'localhost';#赋予用户u1@localhost所有库的权限，且赋予grant权限.mysql&gt;GRANT ALL privileges ON *.* to 'u1'@'localhost' WITH GRANT OPTION;#赋予用户u1@localhost所有库的权限，且赋予grant权限,密码为123.mysql&gt;GRANT ALL privileges ON *.* to 'u1'@'localhost' IDENTIFIED BY '123' WITH GRANT OPTION;#创建账户u2，可以从任意IP登陆，只对test1库有SELECT、UPDATE权限,且密码为123mysql&gt;GRANT SELECT,UPDATE ON test1.* to 'u2'@'%' IDENTIFIED BY '123';#创建账户u3@%，赋予SUPER、PROCESS、FILE权限mysql&gt;GRANT SUPER,PROCESS,FILE ON *.* to 'u3'@'%';#修改账户密码#方法1：SET PASSWORDmysql&gt; SET PASSWORD FOR 'u2'@'%' = PASSWORD('234');#方法2：UPDATEmysql&gt; UPDATE mysql.user SET password=PASSWORD('123') WHERE USER='root' AND HOST='localhost'; mysql&gt;FLUSH PRIVILEGES;#方法3：ALTERmysql&gt;ALTER USER 'u1'@'localhost' IDENTIFIED BY ‘123’;mysql&gt;FLUSH PRIVILEGES;#方法4：linux命令行修改密码[root@localhost]# mysqladmin -uroot -p123(旧密码) password 234(新密码)#方法5：修改user表mysql&gt; INSERT INTO mysql.user (Host,User,Password) VALUES('localhost', 'u1','PASSWORD(234)');mysql&gt; FLUSH PRIVILEGES;#方法6：GRANTmysql&gt; GRANT USAGE ON *.* TO 'u1'@'localhost' IDENTIFIED BY 'xyz';# 重置root密码- 关闭mysql进程 shell&gt; kill `pidof mysqld`- 在my.cnf的[mysqld]段的增加配置 skip-grant-tables #禁用权限认证skip-networking #禁用网络认证- 登录mysql shell&gt; mysql- 刷新权限 mysql&gt; FLUSH PRIVILEGES;- 修改root密码 MySQL 5.7.6 and later:mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';MySQL 5.7.5 and earlier:mysql&gt; SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');- 删除配置,并重启MySQL skip-grant-tables #禁用权限认证skip-networking #禁用网络认证 注意事项 管理权限属于全局权限，不能指定单个数据库； host值可以为主机名或IP地址，或为localhost表示只允许本机登陆； 支持通配符’%’和_, %表示任意主机, _表示匹配一个字符； ‘‘@localhost表示任意账户都可以从localhost登陆； host精确匹配的原则。 查看账户123# 查看用户u1@localhost权限 mysql&gt; SHOW GRANTS FOR 'u1'@'localhost'; 权限回收123# 回收账户u1@localhost权限 mysql&gt;REVOKE SELECT ON *.* FROM 'u1'@'localhost'; 注意事项: USAGE权限不能被回收 删除账户1234567mysql&gt;DROP USER 'u1'@'localhost'; ormysql&gt;DELETE FROM mysql.user WHERE User='u1' AND HOST='localhost';mysql&gt;FLUSH PRIVILEGES;]]></content>
