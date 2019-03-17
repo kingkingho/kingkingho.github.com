@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbanotes.cc/"/>
-  <updated>2019-03-17T06:50:20.783Z</updated>
+  <updated>2019-03-17T06:56:05.401Z</updated>
   <id>http://dbanotes.cc/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/"/>
     <id>http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/</id>
     <published>2019-03-17T04:23:36.000Z</published>
-    <updated>2019-03-17T06:50:20.783Z</updated>
+    <updated>2019-03-17T06:56:05.401Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;分步操作&quot;&gt;&lt;a href=&quot;#分步操作&quot; class=&quot;headerlink&quot; title=&quot;分步操作&quot;&gt;&lt;/a&gt;分步操作&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+        &lt;p&gt;磁盘分区两种操作方式，第一种是命令行一步步操作，步骤清洗；第二种是一行命令完成，简单方便。&lt;/p&gt;
+&lt;h2 id=&quot;分步操作&quot;&gt;&lt;a href=&quot;#分步操作&quot; class=&quot;headerlink&quot; title=&quot;分步操作&quot;&gt;&lt;/a&gt;分步操作&lt;/h2&gt;&lt;figure clas
       
     
     </summary>
