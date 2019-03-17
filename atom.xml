@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbanotes.cc/"/>
-  <updated>2019-03-17T09:41:43.407Z</updated>
+  <updated>2019-03-17T09:44:16.525Z</updated>
   <id>http://dbanotes.cc/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/"/>
     <id>http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/</id>
     <published>2019-03-17T04:23:36.000Z</published>
-    <updated>2019-03-17T09:41:43.407Z</updated>
+    <updated>2019-03-17T09:44:16.525Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;众所周知，CentOS5/6/7下分区一般使用fdisk来完成.&lt;br&gt;fdisk使用的是传统的MBR分区方式，无法支持为Size超过2T的硬盘进行分区，而GPT分区方式则打破了这一限制。&lt;/p&gt;
+      &lt;p&gt;众所周知，CentOS5/6/7下分区一般使用fdisk来完成。&lt;br&gt;fdisk使用的是传统的MBR分区方式，无法支持为Size超过2T的硬盘进行分区，而GPT分区方式则打破了这一限制。&lt;/p&gt;
     
     </summary>
     
