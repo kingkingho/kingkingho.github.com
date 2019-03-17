@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="var APP_ID = tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz;  //输入个人LeanCloud账号AppID   var APP_KEY = UKzRq9WNxiYWXbPkFVxTBp46;  //输入个人LeanCloud账号AppKey   AV.init({     appId: APP_ID,     appKey: APP_KEY   })">
+<meta name="description" content="AV.initialize(&quot;tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz&quot;, &quot;UKzRq9WNxiYWXbPkFVxTBp46&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 <meta name="keywords" content="MySQL,Linux,MongoDB,Redis,Python">
 <meta property="og:type" content="website">
-<meta property="og:title" content="top">
+<meta property="og:title" content="热门文章 TOP10">
 <meta property="og:url" content="http://dbanotes.cc/top/index.html">
 <meta property="og:site_name" content="GoldHu&#39;s Notes">
-<meta property="og:description" content="var APP_ID = tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz;  //输入个人LeanCloud账号AppID   var APP_KEY = UKzRq9WNxiYWXbPkFVxTBp46;  //输入个人LeanCloud账号AppKey   AV.init({     appId: APP_ID,     appKey: APP_KEY   })">
+<meta property="og:description" content="AV.initialize(&quot;tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz&quot;, &quot;UKzRq9WNxiYWXbPkFVxTBp46&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T04:58:00.513Z">
+<meta property="og:updated_time" content="2019-03-17T05:05:22.781Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="top">
-<meta name="twitter:description" content="var APP_ID = tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz;  //输入个人LeanCloud账号AppID   var APP_KEY = UKzRq9WNxiYWXbPkFVxTBp46;  //输入个人LeanCloud账号AppKey   AV.init({     appId: APP_ID,     appKey: APP_KEY   })">
+<meta name="twitter:title" content="热门文章 TOP10">
+<meta name="twitter:description" content="AV.initialize(&quot;tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz&quot;, &quot;UKzRq9WNxiYWXbPkFVxTBp46&quot;);    var time=0   var title=&quot;&quot;   var url=&quot;&quot;   var query = new AV.Query(&apos;Counter&apos;);   query.notEqualTo(&apos;id&apos;,0);   query.d">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>top | GoldHu's Notes</title>
+  <title>热门文章 TOP10 | GoldHu's Notes</title>
   
 
 
@@ -300,7 +300,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">top</h1>
+	<h1 class="post-title" itemprop="name headline">热门文章 TOP10</h1>
 
 
 
@@ -312,40 +312,30 @@
       <div class="post-body">
         
         
-          <div id="post-rank"></div>
-
-<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
-<script>
-  var APP_ID = tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz;  //输入个人LeanCloud账号AppID
-  var APP_KEY = UKzRq9WNxiYWXbPkFVxTBp46;  //输入个人LeanCloud账号AppKey
-  AV.init({
-    appId: APP_ID,
-    appKey: APP_KEY
-  });
-
-  var query = new AV.Query('Counter');//表名
-  query.descending('time'); //结果按阅读次数降序排序
-  query.limit(10);  //最终只返回10条结果
-  query.find().then( response => {
-    var content = response.reduce( (accum, {attributes}) => {
-      accum += `<p><div class="prefix">热度 ${attributes.time} ℃</div><div><a href="${attributes.url}">${attributes.title}</a></div></p>`
-      return accum;
-    },"")
-    document.querySelector("#post-rank").innerHTML = content;
-  })
-  .catch( error => {
-    console.log(error);
+          <p><div id="top"></div></p>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script>AV.initialize("tfsl7iJoFhr6mUxhQo9MxstG-gzGzoHsz", "UKzRq9WNxiYWXbPkFVxTBp46");</script>
+<script type="text/javascript">
+  var time=0
+  var title=""
+  var url=""
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
+  query.find().then(function (todo) {
+    for (var i=0;i<1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      var content="<p>"+"<font color='#1C1C1C'>"+"【文章热度:"+time+"℃】"+"</font>"+"<a href='"+"https://hoxis.github.io"+url+"'>"+title+"</a>"+"</p>";
+      document.getElementById("top").innerHTML+=content
+    }
+  }, function (error) {
+    console.log("error");
   });
 </script>
-
-<style type="text/css">
-  #post-rank {
-    text-align: center;
-  }
-  #post-rank .prefix {
-    color: #ff4d4f;
-  }
-</style>
 
         
       </div>
