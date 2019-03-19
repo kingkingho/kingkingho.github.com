@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="kingkingho&#39;s Notes">
 <meta property="og:description" content="MySQL数据类型和字符集基础知识，基本上是从官方文档翻译而来，把自己的基础打扎实一点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T18:29:46.243Z">
+<meta property="og:updated_time" content="2019-03-19T18:32:23.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据类型和字符集(基础一)">
 <meta name="twitter:description" content="MySQL数据类型和字符集基础知识，基本上是从官方文档翻译而来，把自己的基础打扎实一点。">
@@ -435,55 +435,13 @@
 <li><p>BOOL, BOOLEAN<br>布尔类型，和TINYINT(1)类似，0代表false，1代表true，TRUE和FALSE分别是1和0的别名。</p>
 </li>
 </ul>
-<pre><code class="sql">root@localhost 22:37:41 [(none)]&gt; select IF(0, 'true', 'false');
-+<span class="comment">------------------------+</span>
-| IF(0, 'true', 'false') |
-+<span class="comment">------------------------+</span>
-| false                  |
-+<span class="comment">------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-
-root@localhost <span class="number">22</span>:<span class="number">37</span>:<span class="number">45</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">1</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);
-+<span class="comment">------------------------+</span>
-| IF(1, 'true', 'false') |
-+<span class="comment">------------------------+</span>
-| true                   |
-+<span class="comment">------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-
-root@localhost <span class="number">22</span>:<span class="number">39</span>:<span class="number">48</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">0</span>=<span class="literal">FALSE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);
-+<span class="comment">------------------------------+</span>
-| IF(0=FALSE, 'true', 'false') |
-+<span class="comment">------------------------------+</span>
-| true                         |
-+<span class="comment">------------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-
-root@localhost <span class="number">22</span>:<span class="number">39</span>:<span class="number">53</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">1</span>=<span class="literal">TRUE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);
-+<span class="comment">-----------------------------+</span>
-| IF(1=TRUE, 'true', 'false') |
-+<span class="comment">-----------------------------+</span>
-| true                        |
-+<span class="comment">-----------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-
-root@localhost <span class="number">22</span>:<span class="number">40</span>:<span class="number">00</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">2</span>=<span class="literal">TRUE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);
-+<span class="comment">-----------------------------+</span>
-| IF(2=TRUE, 'true', 'false') |
-+<span class="comment">-----------------------------+</span>
-| false                       |
-+<span class="comment">-----------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-
-root@localhost <span class="number">22</span>:<span class="number">40</span>:<span class="number">09</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">2</span>=<span class="literal">FALSE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);
-+<span class="comment">------------------------------+</span>
-| IF(2=FALSE, 'true', 'false') |
-+<span class="comment">------------------------------+</span>
-| false                        |
-+<span class="comment">------------------------------+</span>
-1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)
-<span class="comment"># 由于2即不等于1也不等于0，所以后面2个表达式为FALSE</span>
-</code></pre>
+<p>`<br>root@localhost 22:37:41 [(none)]&gt; select IF(0, ‘true’, ‘false’);<br>+————————+<br>| IF(0, ‘true’, ‘false’) |<br>+————————+<br>| false                  |<br>+————————+<br>1 row in set (0.00 sec)</p>
+<p>root@localhost 22:37:45 [(none)]&gt; select IF(1, ‘true’, ‘false’);<br>+————————+<br>| IF(1, ‘true’, ‘false’) |<br>+————————+<br>| true                   |<br>+————————+<br>1 row in set (0.00 sec)</p>
+<p>root@localhost 22:39:48 [(none)]&gt; select IF(0=FALSE, ‘true’, ‘false’);<br>+——————————+<br>| IF(0=FALSE, ‘true’, ‘false’) |<br>+——————————+<br>| true                         |<br>+——————————+<br>1 row in set (0.00 sec)</p>
+<p>root@localhost 22:39:53 [(none)]&gt; select IF(1=TRUE, ‘true’, ‘false’);<br>+—————————–+<br>| IF(1=TRUE, ‘true’, ‘false’) |<br>+—————————–+<br>| true                        |<br>+—————————–+<br>1 row in set (0.00 sec)</p>
+<p>root@localhost 22:40:00 [(none)]&gt; select IF(2=TRUE, ‘true’, ‘false’);<br>+—————————–+<br>| IF(2=TRUE, ‘true’, ‘false’) |<br>+—————————–+<br>| false                       |<br>+—————————–+<br>1 row in set (0.00 sec)</p>
+<p>root@localhost 22:40:09 [(none)]&gt; select IF(2=FALSE, ‘true’, ‘false’);<br>+——————————+<br>| IF(2=FALSE, ‘true’, ‘false’) |<br>+——————————+<br>| false                        |<br>+——————————+<br>1 row in set (0.00 sec)</p>
+<h1 id="由于2即不等于1也不等于0，所以后面2个表达式为FALSE"><a href="#由于2即不等于1也不等于0，所以后面2个表达式为FALSE" class="headerlink" title="由于2即不等于1也不等于0，所以后面2个表达式为FALSE"></a>由于2即不等于1也不等于0，所以后面2个表达式为FALSE</h1><p>`</p>
 <ul>
 <li><p>SMALLINT/MEDIUMINT/INT/INTEGER/BIGINT(M) [UNSIGNED] [ZEROFILL]<br>这几个类型基本相似，只不过在定义UNSIGNED或SIGNED时，各类型的取值范围不一样。  </p>
 </li>
@@ -860,7 +818,7 @@ root@localhost <span class="number">22</span>:<span class="number">40</span>:<sp
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值型"><span class="nav-number">1.</span> <span class="nav-text">数值型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期、时间型"><span class="nav-number">2.</span> <span class="nav-text">日期、时间型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型"><span class="nav-number">3.</span> <span class="nav-text">字符串类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值型"><span class="nav-number">1.</span> <span class="nav-text">数值型</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#由于2即不等于1也不等于0，所以后面2个表达式为FALSE"><span class="nav-number"></span> <span class="nav-text">由于2即不等于1也不等于0，所以后面2个表达式为FALSE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日期、时间型"><span class="nav-number">1.</span> <span class="nav-text">日期、时间型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型"><span class="nav-number">2.</span> <span class="nav-text">字符串类型</span></a></li></ol></li></div>
             
 
           </div>
