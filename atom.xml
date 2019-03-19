@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://dbanotes.cc/"/>
+  <link href="http://kingkingho.com/"/>
   <updated>2019-03-17T09:44:16.525Z</updated>
-  <id>http://dbanotes.cc/</id>
+  <id>http://kingkingho.com/</id>
   
   <author>
     <name>GlodHu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>CentOS下磁盘分区</title>
-    <link href="http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/"/>
-    <id>http://dbanotes.cc/2019/03/17/Disk-parted-on-CentOS/</id>
+    <link href="http://kingkingho.com/2019/03/17/Disk-parted-on-CentOS/"/>
+    <id>http://kingkingho.com/2019/03/17/Disk-parted-on-CentOS/</id>
     <published>2019-03-17T04:23:36.000Z</published>
     <updated>2019-03-17T09:44:16.525Z</updated>
     
@@ -29,19 +29,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://dbanotes.cc/categories/Linux/"/>
+      <category term="Linux" scheme="http://kingkingho.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://dbanotes.cc/tags/Linux/"/>
+      <category term="Linux" scheme="http://kingkingho.com/tags/Linux/"/>
     
-      <category term="CentOS" scheme="http://dbanotes.cc/tags/CentOS/"/>
+      <category term="CentOS" scheme="http://kingkingho.com/tags/CentOS/"/>
     
   </entry>
   
   <entry>
     <title>MySQL账户与权限管理</title>
-    <link href="http://dbanotes.cc/2019/03/16/MySQL-Account-Privileges-Management/"/>
-    <id>http://dbanotes.cc/2019/03/16/MySQL-Account-Privileges-Management/</id>
+    <link href="http://kingkingho.com/2019/03/16/MySQL-Account-Privileges-Management/"/>
+    <id>http://kingkingho.com/2019/03/16/MySQL-Account-Privileges-Management/</id>
     <published>2019-03-16T13:08:51.000Z</published>
     <updated>2019-03-17T09:42:08.527Z</updated>
     
@@ -51,10 +51,10 @@
     
     </summary>
     
-      <category term="MySQL" scheme="http://dbanotes.cc/categories/MySQL/"/>
+      <category term="MySQL" scheme="http://kingkingho.com/categories/MySQL/"/>
     
     
-      <category term="MySQL" scheme="http://dbanotes.cc/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://kingkingho.com/tags/MySQL/"/>
     
   </entry>
   
