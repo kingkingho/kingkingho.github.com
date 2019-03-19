@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingkingho.com/"/>
-  <updated>2019-03-17T09:44:16.525Z</updated>
+  <updated>2019-03-19T18:19:24.433Z</updated>
   <id>http://kingkingho.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL数据类型和字符集(基础一)</title>
+    <link href="http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/"/>
+    <id>http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/</id>
+    <published>2019-03-19T18:19:24.000Z</published>
+    <updated>2019-03-19T18:19:24.433Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL数据类型和字符集基础知识，基本上是从官方文档翻译而来，把自己的基础打扎实一点。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://kingkingho.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="http://kingkingho.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS下磁盘分区</title>
