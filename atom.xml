@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>KingKingHo&#39;s Notes</title>
+  <title>kingkingho&#39;s Notes</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://kingkingho.com/</id>
   
   <author>
-    <name>GlodHu</name>
+    <name>kingkingho</name>
     
   </author>
   
