@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="MySQL数据类型和字符集基础知识。   MySQL支持多种数据类型，常用包含：数值型，日期、时间型，字符串型等。  MySQL supports a number of SQL data types in several categories: numeric types, date and time types, string (character and byte) types, and s">
+<meta name="description" content="MySQL数据类型和字符集进阶。">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据类型和字符集(一)">
-<meta property="og:url" content="http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/index.html">
+<meta property="og:title" content="MySQL数据类型和字符集(二)">
+<meta property="og:url" content="http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/index.html">
 <meta property="og:site_name" content="kingkingho&#39;s Notes">
-<meta property="og:description" content="MySQL数据类型和字符集基础知识。   MySQL支持多种数据类型，常用包含：数值型，日期、时间型，字符串型等。  MySQL supports a number of SQL data types in several categories: numeric types, date and time types, string (character and byte) types, and s">
+<meta property="og:description" content="MySQL数据类型和字符集进阶。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-20T16:25:30.949Z">
+<meta property="og:updated_time" content="2019-03-20T17:48:11.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据类型和字符集(一)">
-<meta name="twitter:description" content="MySQL数据类型和字符集基础知识。   MySQL支持多种数据类型，常用包含：数值型，日期、时间型，字符串型等。  MySQL supports a number of SQL data types in several categories: numeric types, date and time types, string (character and byte) types, and s">
+<meta name="twitter:title" content="MySQL数据类型和字符集(二)">
+<meta name="twitter:description" content="MySQL数据类型和字符集进阶。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/">
+  <link rel="canonical" href="http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/">
 
 
 
 
 
-  <title>MySQL数据类型和字符集(一) | kingkingho's Notes</title>
+  <title>MySQL数据类型和字符集(二) | kingkingho's Notes</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/">
+    <link itemprop="mainEntityOfPage" href="http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingkingho">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据类型和字符集(一)</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL数据类型和字符集(二)</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T02:19:24+08:00">
-                2019-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T01:48:11+08:00">
+                2019-03-21
               </time>
             
 
@@ -347,28 +347,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -377,8 +355,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/20/MySQL-data-type-and-character-set/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/20/MySQL-data-type-and-character-set/" itemprop="commentCount"></span>
+                <a href="/2019/03/21/MySQL-data-type-and-character-set-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/21/MySQL-data-type-and-character-set-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +364,7 @@
 
           
           
-             <span id="/2019/03/20/MySQL-data-type-and-character-set/" class="leancloud_visitors" data-flag-title="MySQL数据类型和字符集(一)">
+             <span id="/2019/03/21/MySQL-data-type-and-character-set-2/" class="leancloud_visitors" data-flag-title="MySQL数据类型和字符集(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -417,102 +395,244 @@
       
 
       
-        <p>MySQL数据类型和字符集基础知识。  </p>
-<p>MySQL支持多种数据类型，常用包含：数值型，日期、时间型，字符串型等。</p>
-<blockquote>
-<p>MySQL supports a number of SQL data types in several categories: numeric types, date and time types, string (character and byte) types, and spatial types. </p>
-</blockquote>
+        <p>MySQL数据类型和字符集进阶。</p>
 <a id="more"></a>
-<h2 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h2><p>在定义整型时，M代表的是最大显示宽度，最大值为255，值得注意的是，显示宽度和类型所包含的值范围无关。在浮点型和定点型中，M表示可存储的总位数，数值类型可定义SIGNED和UNSIGEND属性，默认为SIGNED，当一个数字列指定ZEROFILL属性时，会自动增加UNSIGNED。</p>
+<h1 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h1><h2 id="整型存储要求和值范围"><a href="#整型存储要求和值范围" class="headerlink" title="整型存储要求和值范围"></a>整型存储要求和值范围</h2><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储(bytes)</th>
+<th>最小值(SIGNED/UNSIGNED)</th>
+<th>最大值(SIGNED/UNSIGNED)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td>1</td>
+<td>-128/0</td>
+<td>127/255</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2</td>
+<td>-32768/0</td>
+<td>32767/65535</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3</td>
+<td>-8388608/0</td>
+<td>8388607/16777215</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>4</td>
+<td>-2147483648/0</td>
+<td>2147483647/4294967295</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8</td>
+<td>$-2^{63}$/0</td>
+<td>$2^{63}-1$/$2^{64}-1$</td>
+</tr>
+<tr>
+<td>FLOAT(p)</td>
+<td>4 bytes if 0 &lt;= p &lt;= 24, 8 bytes if 25 &lt;= p &lt;= 53</td>
+<td>-</td>
+<td>- </td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>4</td>
+<td>-</td>
+<td>- </td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>DECIMAL(M,D), NUMERIC(M,D)</td>
+<td>变化的，见下面表格</td>
+<td>-</td>
+<td>- </td>
+</tr>
+<tr>
+<td>BIT(M)</td>
+<td>约(M+7)/8</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>剩余的数</th>
+<th>字节数 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5-6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="日期时间型存储要求"><a href="#日期时间型存储要求" class="headerlink" title="日期时间型存储要求"></a>日期时间型存储要求</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>MySQL5.6.4之前存储字节数</th>
+<th>MySQL5.6.4开始存储字节数  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YEAR</td>
+<td>1</td>
+<td>1 </td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>3 + 小秒数存储</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>5 + 小秒数存储</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>4 + 小秒数存储</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>小秒位数</th>
+<th>存储要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1,2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3,4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5,6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>M indicates the maximum display width for integer types. The maximum display width is 255. Display width is unrelated to the range of values a type can contain, For floating-point and fixed-point types, M is the total number of digits that can be stored.  </p>
+<p>举例：TIME(0)，TIME(2)，TIME(4)，TIME(6)分别需要 3+0bytes ， 3+1bytes ，3+2bytes ， 3+3bytes  </p>
 </blockquote>
-<ul>
-<li><p>BIT[(M)]<br>bit类型，M表示每个值的位数，从1到64，默认值为1。  </p>
-</li>
-<li><p>TINYINT[(M)] [UNSIGNED] [ZEROFILL]<br>非常小的整型， 有符号的范围是-128到127，无符号的范围是0-255   </p>
-</li>
-<li><p>BOOL, BOOLEAN<br>布尔类型，和TINYINT(1)类似，0代表false，1代表true，TRUE和FALSE分别是1和0的别名。</p>
-</li>
+<h2 id="字符串类型存储要求"><a href="#字符串类型存储要求" class="headerlink" title="字符串类型存储要求"></a>字符串类型存储要求</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR(M)</td>
+<td>COMPACT行格式优化了可变长度字符集的存储，除此之外，占用M x w字节，0&lt;=M&lt;=255，w表示给定字符集下字符所最大长度(如:utf8下存中文最大3个bytes)</td>
+</tr>
+<tr>
+<td>BINARY(M)</td>
+<td>M bytes, 0 &lt;= M &lt;= 255</td>
+</tr>
+<tr>
+<td>VARCHAR(M), VARBINARY(M)</td>
+<td>M小于等于255时占用L+1字节，M大于等于256时占用L+2字节</td>
+</tr>
+<tr>
+<td>TINYBLOB, TINYTEXT</td>
+<td>L &lt; $2^8$，L+1字节</td>
+</tr>
+<tr>
+<td>BLOB, TEXT</td>
+<td>L &lt; $2^{16}$，L+2字节</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB, MEDIUMTEXT</td>
+<td>L &lt; $2^{24}$，L+3字节</td>
+</tr>
+<tr>
+<td>LONGBLOB,LONGTEXT</td>
+<td>L &lt; $2^{32}$，L+4字节</td>
+</tr>
+<tr>
+<td>ENUM(‘value1’,’value2’,…)</td>
+<td>大于等于255个值占用1byte，256-65535个值占用2bytes</td>
+</tr>
+<tr>
+<td>SET(‘value1’,’value2’,…)</td>
+<td>设成员数为N，N的最大值是64，占用(N+7)/8字节数，向上取整</td>
+</tr>
+</tbody>
+</table>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="CHAR和VARCHAR类型"><a href="#CHAR和VARCHAR类型" class="headerlink" title="CHAR和VARCHAR类型"></a>CHAR和VARCHAR类型</h3><ul>
+<li>CHAR是定长类型，对多可存储255个字符，utf8字符集下，最大存储85个字符(255/3)。</li>
+<li>CHAR(32)在utf8下存’abcd’四个字符，仍然会占用96个字节(32*3)。</li>
+<li>VARCHAR是变成类型，最大65535字节，由于需要额外1-2个字节做长度标识，单表所有VARCHAR字段列可用总长度为65533字节。</li>
+<li>VARCHAR在不跨越255字节的情况下，增加列长度可以实现inplace，不需要拷贝(迁移)原数据，只需要修改metadata即可。</li>
+<li>VARCHAR实际存储长度超过255字节时，会被当做为TEXT处理。<h3 id="BLOG和TEXT类型"><a href="#BLOG和TEXT类型" class="headerlink" title="BLOG和TEXT类型"></a>BLOG和TEXT类型</h3></li>
+<li>超长字段可能会发生off page(overflow)存储。</li>
+<li>大对象类型尽量不要使用，无法避免的情况下单独一张表存放。</li>
+<li>对text列排序时，实际排序长度是max_sort_length字节。</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">root@localhost 22:37:41 [(none)]&gt; select IF(0, 'true', 'false');</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">| IF(0, 'true', 'false') |</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">| false                  |</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">root@localhost <span class="number">22</span>:<span class="number">37</span>:<span class="number">45</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">1</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">| IF(1, 'true', 'false') |</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">| true                   |</span><br><span class="line">+<span class="comment">------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">root@localhost <span class="number">22</span>:<span class="number">39</span>:<span class="number">48</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">0</span>=<span class="literal">FALSE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">| IF(0=FALSE, 'true', 'false') |</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">| true                         |</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">root@localhost <span class="number">22</span>:<span class="number">39</span>:<span class="number">53</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">1</span>=<span class="literal">TRUE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">| IF(1=TRUE, 'true', 'false') |</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">| true                        |</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">root@localhost <span class="number">22</span>:<span class="number">40</span>:<span class="number">00</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">2</span>=<span class="literal">TRUE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">| IF(2=TRUE, 'true', 'false') |</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">| false                       |</span><br><span class="line">+<span class="comment">-----------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">root@localhost <span class="number">22</span>:<span class="number">40</span>:<span class="number">09</span> [(<span class="keyword">none</span>)]&gt; <span class="keyword">select</span> <span class="keyword">IF</span>(<span class="number">2</span>=<span class="literal">FALSE</span>, <span class="string">'true'</span>, <span class="string">'false'</span>);</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">| IF(2=FALSE, 'true', 'false') |</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">| false                        |</span><br><span class="line">+<span class="comment">------------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"><span class="comment"># 由于2即不等于1也不等于0，所以后面2个表达式为FALSE</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>SMALLINT/MEDIUMINT/INT/INTEGER/BIGINT(M) [UNSIGNED] [ZEROFILL]<br>这几个类型基本相似，只不过在定义UNSIGNED或SIGNED时，各类型的取值范围不一样。  </p>
-</li>
-<li><p>DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]<br>M代表数字的总位数(精度)，D代表小数点的位数(刻度)，小数点和’-‘号不计入M，0&lt;=M&lt;=65，0&lt;=D&lt;=30，D的默认值为0，表示没有小数点或小数位，M的默认值为10.  </p>
-</li>
-<li><p>DEC[(M[,D])] [UNSIGNED] [ZEROFILL], NUMERIC[(M[,D])] [UNSIGNED] [ZEROFILL], FIXED[(M[,D])] [UNSIGNED] [ZEROFILL]<br>和DECIMAL类似，为了兼容其他数据库系统。  </p>
-</li>
-<li><p>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]<br>小的浮点数(单精度)，M表示总位数，D表示小数点后的位数，如果M和D忽略，值的存储受限于硬件  </p>
-</li>
-<li><p>FLOAT(p) [UNSIGNED] [ZEROFILL]<br>浮点数， p表示以位为单位的精度；<br>当0&lt;=p&lt;=24时，数据类型转换为没有M和D的FLOAT类型<br>当25&lt;=p&lt;=53时，数据类型转换为没有M和D的DOUBLE类型 。  </p>
-</li>
-<li><p>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]<br>双精度浮点数，实际范围取决于操作系统或硬件。  </p>
-</li>
-<li><p>DOUBLE PRECISION[(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL]<br>和DOUBLE类型类似。</p>
-</li>
+<h3 id="数据类型的选择"><a href="#数据类型的选择" class="headerlink" title="数据类型的选择"></a>数据类型的选择</h3><ul>
+<li>最大限度减少I/O请求。</li>
+<li>让数据表每行长度越小越好。</li>
+<li>有TEXT/BLOG等大列时，尽量拆分到独立子表。</li>
+<li>经常更新的列和不经常更新的列分开存储。</li>
+<li>更新前后的长度也尽可能不要变大。</li>
 </ul>
-<h2 id="日期、时间型"><a href="#日期、时间型" class="headerlink" title="日期、时间型"></a>日期、时间型</h2><p>MySQL 5.6.4或以上的版本支持为TIME，DATETIME，TIMESTAMP定义小秒值，精度可到微妙(6位)，要定义一个小秒的字段，使用type_name(fsp)语法，type_name包含TIME、DATETIME、TIMESTAMP，fsp代表小秒精度，fsp的值为0到6，默认是0。  </p>
-<p>MySQL 5.6.5及以上的版本扩展了时间类型自动初始化和更新时间，每个表允许有多个TIMESTAMP字段自动更新时间，并且，该属性支持DATETIME类型。</p>
-<ul>
-<li><p>DATE<br>日期类型，支持的范围为’1000-01-01’到’9999-12-31’，MySQL以’YYYY-MM-DD’格式显示，同时也允许字符串和数字分配给DATE字段。  </p>
-</li>
-<li><p>DATETIME[(fsp)]<br>日期和时间的组合类型，支持范围’1000-01-01 00:00:00.000000’ 到 ‘9999-12-31 23:59:59.999999’，MySQL以’YYYY-MM-DD HH:MM:SS[.fraction]’格式显示值，同样支持以字符串和数值插入到DATETIME字段。  </p>
-</li>
-</ul>
-<p>从MySQL5.6.4开始，0&lt;=fsp&lt;=6，默认为0，没有小秒部分。<br>从MySQL5.6.5开始，可以使用DEFAULT和ON UPDATE来定义DATETIME自动初始化和更新时间。  </p>
-<ul>
-<li>TIMESTAMP[(fsp)]<br>时间戳类型，范围’1970-01-01 00:00:01.000000’ UTC 到 ‘2038-01-19 03:14:07.999999’ UTC ，TIMESTAMP存储为从’1970-01-01 00:00:00’ UTC开始的秒数，不能存储’1970-01-01 00:00:00’，因为这等于0，0是表示’0000-00-00 00:00:00’。  </li>
-</ul>
-<p>当变量explicit_defaults_for_timestamp启用时，不会为TIMESTAMP列分配DEFAULT CURRENT_TIMESTAMP或ON UPDATE CURRENT_TIMESTAMP属性，必须明确定义，此外，任何未显式声明为NOT NULL的TIMESTAMP都允许NULL值。</p>
-<p>当系统变量explicit_defaults_for_timestamp禁用时，服务器按照如下规则处理TIMESTAMP列：</p>
-<ul>
-<li>除非另有说明，表中第一个TAMESTAMP字段(如果没有明确赋值)被定义为自动设置最近修改日期和时间。   </li>
-<li>可以使用DEFAULT CURRENT_TIMESTAMP和ON UPDATE CURRENT_TIMESTAMP列定义子句指定自动初始化和更新到当前日期和时间。默认的第一个字段拥有这些属性。从MySQL 5.6.6开始，任何该类型字段都可以被定义拥有这些属性，在MySQL5.6.5之前仅有1个该类型字段支持定义这样的属性。</li>
-</ul>
-<ul>
-<li>TIME[(fsp)]<br>时间类型，范围是’-838:59:59.000000’ 到 ‘838:59:59.000000’，MySQL以’HH:MM:SS[.fraction]’格式显示，也支持以字符串和数值插入到TIME字段。  </li>
-<li>YEAR[(2|4)]<br>2位数年或4位数年，默认4位数，2中定义拥有相同的范围，只是显示有差别。</li>
-</ul>
-<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><p>字符列比较和排序基于分配给列的排序规则。</p>
-<ul>
-<li><p>[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]<br>定长字符串，在存储时始终用空格填充到指定长度，M 表示以字符为单位的列长度，M的范围为0-255，默认值为1。</p>
-<ul>
-<li>注意：除非SQL MODE启用 PAD_CHAR_TO_FULL_LENGTH，否则检索CHAR值将删除尾部空格。<br>CHAR（0）列值占用1 bit，只能取值NULL和’’。</li>
-</ul>
-</li>
-<li><p>[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]<br>变长字符串，M表示字符的最大列长度，M的范围0-65535，VARCHAR的有效最大长度取决于最大行大小和字符集的使用，因为65535bytes是所有字段共用，例如，utf8下一个字符最大占用3个字节，因此utf8字符集下一个VARCHAR列最大可声明为21844个字符。<br>当M&lt;=255时，需要额外的1byte做长度标记。<br>当M&gt;=256时，需要额外的2bytes做长度标记。 </p>
-</li>
-<li><p>BINARY[(M)]<br>类似于CHAR类型，存储二进制字符串，M表示以字节为单位的列长度，默认值为1。  </p>
-</li>
-<li><p>VARBINARY(M)<br>类似于VARCHAR类型，存储二进制字符串，M表示以字节单位的最大列长度。</p>
-</li>
-<li><p>TINYBLOB<br>最大长度255 (2^8 − 1) bytes，需要额外的1 byte标识。</p>
-</li>
-<li><p>BLOG[(M)]<br>最大长度为65,535（2^16-1）字节，需要额外的2 bytes标识。</p>
-</li>
-<li><p>MEDIUMBLOB<br>最大长度为16,777,215（2^24 - 1）字节，需要额外的3 bytes标识。</p>
-</li>
-<li><p>LONGBLOB<br>最大长度4,294,967,295bytes或4GB (2^32−1) ，最大长度受maximum packet size和可用内存影响，需要额外的4 bytes标识。</p>
-</li>
-<li><p>TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name]<br>最大长度为255（2^8 - 1）个字符，需要额外的1 byte标识。</p>
-</li>
-<li><p>TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]<br>最大长度为65,535 (2^16 − 1)个字符，需要额外2 bytes标识。</p>
-</li>
-<li><p>MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name]<br>最大长度为16,777,215 (2^24 − 1)个字符，需要额外的3 bytes标识。</p>
-</li>
-<li><p>LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]  </p>
-</li>
-</ul>
-<p>最大长度4,294,967,295 or 4GB (2^32 − 1)个字符，最大长度受maximum packet size和可用内存影响，需要额外的4 bytes标识。</p>
-<ul>
-<li><p>ENUM(‘value1’,’value2’,…) [CHARACTER SET charset_name] [COLLATE collation_name]<br>枚举类型，只能包含一个值，从多个值的列表中选择一个或者为NULL和空字符串’’。底层为整型，ENUM列最多可包含65,535个不同的元素。<br>（实际限制小于3000.）一个表在其被视为一个组的ENUM和SET列中不能超过255个唯一元素列表定义。</p>
-</li>
-<li><p>SET(‘value1’,’value2’,…) [CHARACTER SET charset_name] [COLLATE collation_name]<br>集合类型，可以包含零个或多个值，每个值都必须从值列表’value1’，’value2’中选择，… SET值在内部表示为整数，SET列最多可包含64个不同的成员。<br>一个表在其被视为一个组的ENUM和SET列中可以包含不超过255个唯一元素列表定义。</p>
-</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html" target="_blank" rel="noopener">官方数据类型说明</a></li>
+<h3 id="类型隐式转换"><a href="#类型隐式转换" class="headerlink" title="类型隐式转换"></a>类型隐式转换</h3><ul>
+<li>对NULL进行比较时，只能是IS [NOT] NULL，或者&lt;=&gt;NULL，其他情况无法正确计算，也无法走索引。</li>
+<li>向字符串列传入整型比较时，整型会被隐式转换成字符串（无法使用索引）。</li>
+<li>TIMESTAMP/DATETIME列和整型比较时，整型会自动转换成日期时间类型（5.6以后可以使用索引）。</li>
+<li>字符串列和0比较时，全部字符串行会匹配上。<br>参考：<a href="https://dev.mysql.com/doc/refman/5.7/en/type-conversion.html" target="_blank" rel="noopener">隐式转换官方介绍</a></li>
 </ul>
 
       
@@ -563,7 +683,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/" title="MySQL数据类型和字符集(一)">http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/</a>
+    <a href="http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/" title="MySQL数据类型和字符集(二)">http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -591,8 +711,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/17/Disk-parted-on-CentOS/" rel="next" title="CentOS下磁盘分区">
-                <i class="fa fa-chevron-left"></i> CentOS下磁盘分区
+              <a href="/2019/03/20/MySQL-data-type-and-character-set/" rel="next" title="MySQL数据类型和字符集(一)">
+                <i class="fa fa-chevron-left"></i> MySQL数据类型和字符集(一)
               </a>
             
           </div>
@@ -600,10 +720,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/21/MySQL-data-type-and-character-set-2/" rel="prev" title="MySQL数据类型和字符集(二)">
-                MySQL数据类型和字符集(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -819,7 +935,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值型"><span class="nav-number">1.</span> <span class="nav-text">数值型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期、时间型"><span class="nav-number">2.</span> <span class="nav-text">日期、时间型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型"><span class="nav-number">3.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数值类型"><span class="nav-number">1.</span> <span class="nav-text">数值类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整型存储要求和值范围"><span class="nav-number">1.1.</span> <span class="nav-text">整型存储要求和值范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期时间型存储要求"><span class="nav-number">1.2.</span> <span class="nav-text">日期时间型存储要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型存储要求"><span class="nav-number">1.3.</span> <span class="nav-text">字符串类型存储要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CHAR和VARCHAR类型"><span class="nav-number">1.4.1.</span> <span class="nav-text">CHAR和VARCHAR类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BLOG和TEXT类型"><span class="nav-number">1.4.2.</span> <span class="nav-text">BLOG和TEXT类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型的选择"><span class="nav-number">1.4.3.</span> <span class="nav-text">数据类型的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型隐式转换"><span class="nav-number">1.4.4.</span> <span class="nav-text">类型隐式转换</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -991,9 +1107,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://kingkingho.com/2019/03/20/MySQL-data-type-and-character-set/';
-          this.page.identifier = '2019/03/20/MySQL-data-type-and-character-set/';
-          this.page.title = 'MySQL数据类型和字符集(一)';
+          this.page.url = 'http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/';
+          this.page.identifier = '2019/03/21/MySQL-data-type-and-character-set-2/';
+          this.page.title = 'MySQL数据类型和字符集(二)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://GoldHu.disqus.com/embed.js';
