@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="kingkingho&#39;s Notes">
 <meta property="og:description" content="MySQL数据类型和字符集进阶。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-20T17:48:11.689Z">
+<meta property="og:updated_time" content="2019-03-20T17:57:46.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据类型和字符集(二)">
 <meta name="twitter:description" content="MySQL数据类型和字符集进阶。">
@@ -410,36 +410,60 @@
 <tr>
 <td>TINYINT</td>
 <td>1</td>
-<td>-128/0</td>
-<td>127/255</td>
+<td>-128</td>
+<td>127</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>0</td>
+<td>255</td>
 </tr>
 <tr>
 <td>SMALLINT</td>
 <td>2</td>
-<td>-32768/0</td>
-<td>32767/65535</td>
+<td>-32768</td>
+<td>32767</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>0</td>
+<td>65535</td>
 </tr>
 <tr>
 <td>MEDIUMINT</td>
 <td>3</td>
-<td>-8388608/0</td>
-<td>8388607/16777215</td>
+<td>-8388608</td>
+<td>8388607</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>0</td>
+<td>16777215</td>
 </tr>
 <tr>
 <td>INT</td>
 <td>4</td>
-<td>-2147483648/0</td>
-<td>2147483647/4294967295</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>0</td>
+<td>4294967295 </td>
 </tr>
 <tr>
 <td>BIGINT</td>
 <td>8</td>
-<td>$-2^{63}$/0</td>
-<td>$2^{63}-1$/$2^{64}-1$</td>
+<td><code>$-2^{63}$</code>/0</td>
+<td><code>$2^{63}$</code>-1/<code>$2^{64}$</code>-1</td>
 </tr>
 <tr>
 <td>FLOAT(p)</td>
-<td>4 bytes if 0 &lt;= p &lt;= 24, 8 bytes if 25 &lt;= p &lt;= 53</td>
+<td>p小于等于24，占用4字节，p大于24占用8字节</td>
 <td>-</td>
 <td>- </td>
 </tr>
@@ -521,7 +545,7 @@
 <tr>
 <td>TIME</td>
 <td>3</td>
-<td>3 + 小秒数存储</td>
+<td>3 +小秒数存储</td>
 </tr>
 <tr>
 <td>DATETIME</td>
@@ -613,10 +637,12 @@
 </table>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="CHAR和VARCHAR类型"><a href="#CHAR和VARCHAR类型" class="headerlink" title="CHAR和VARCHAR类型"></a>CHAR和VARCHAR类型</h3><ul>
 <li>CHAR是定长类型，对多可存储255个字符，utf8字符集下，最大存储85个字符(255/3)。</li>
-<li>CHAR(32)在utf8下存’abcd’四个字符，仍然会占用96个字节(32*3)。</li>
-<li>VARCHAR是变成类型，最大65535字节，由于需要额外1-2个字节做长度标识，单表所有VARCHAR字段列可用总长度为65533字节。</li>
+<li>CHAR(32)在utf8下存abcd四个字符，仍然会占用96个字节(32*3)。</li>
+<li>VARCHAR是变成类型，最大65535字节，由于需要额外1-2个字节做长度标识，单表所有VARCHAR字段列可用总长度为65533字节。</li>
 <li>VARCHAR在不跨越255字节的情况下，增加列长度可以实现inplace，不需要拷贝(迁移)原数据，只需要修改metadata即可。</li>
-<li>VARCHAR实际存储长度超过255字节时，会被当做为TEXT处理。<h3 id="BLOG和TEXT类型"><a href="#BLOG和TEXT类型" class="headerlink" title="BLOG和TEXT类型"></a>BLOG和TEXT类型</h3></li>
+<li>VARCHAR实际存储长度超过255字节时，会被当做为TEXT处理。</li>
+</ul>
+<h3 id="BLOG和TEXT类型"><a href="#BLOG和TEXT类型" class="headerlink" title="BLOG和TEXT类型"></a>BLOG和TEXT类型</h3><ul>
 <li>超长字段可能会发生off page(overflow)存储。</li>
 <li>大对象类型尽量不要使用，无法避免的情况下单独一张表存放。</li>
 <li>对text列排序时，实际排序长度是max_sort_length字节。</li>
