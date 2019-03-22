@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kingkingho.com/"/>
-  <updated>2019-03-20T18:13:47.739Z</updated>
+  <updated>2019-03-22T06:24:27.054Z</updated>
   <id>http://kingkingho.com/</id>
   
   <author>
@@ -21,13 +21,15 @@
     <link href="http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/"/>
     <id>http://kingkingho.com/2019/03/21/MySQL-data-type-and-character-set-2/</id>
     <published>2019-03-20T17:48:11.000Z</published>
-    <updated>2019-03-20T18:13:47.739Z</updated>
+    <updated>2019-03-22T06:24:27.054Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;MySQL数据类型和字符集进阶。&lt;/p&gt;
     
     </summary>
+    
+      <category term="MySQL" scheme="http://kingkingho.com/categories/MySQL/"/>
     
     
       <category term="MySQL" scheme="http://kingkingho.com/tags/MySQL/"/>
